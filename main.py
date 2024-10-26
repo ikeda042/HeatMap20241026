@@ -95,5 +95,7 @@ def generate_heatmap_abs(file_name: str):
 
 files = os.listdir("files")
 for file in files:
-    print(file)
-    generate_heatmap_abs(f"files/{file}")
+    if "328" in file:
+        print(file)
+        generate_heatmap_abs(f"files/{file}")
+    # generate_heatmap_abs(f"files/{file}")
