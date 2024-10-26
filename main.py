@@ -3,7 +3,7 @@ import numpy as np
 from dataclasses import dataclass
 import os
 
-print(os.listdir("files"))
+
 max_y = 8
 
 
@@ -92,3 +92,15 @@ def generate_heatmap_abs(file_name: str):
 
 
 # generate_heatmap_abs("demo/heatmapdata-bulk.csv")
+
+files = os.listdir("files")
+for file in files:
+    print(file)
+import os
+
+files = os.listdir("files")
+for file in files:
+    if file.endswith(".db.csv"):
+        new_name = file.replace(".db.csv", ".csv")
+        os.rename(os.path.join("files", file), os.path.join("files", new_name))
+        print(f"Renamed: {file} to {new_name}")
