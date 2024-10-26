@@ -87,7 +87,7 @@ def generate_heatmap_abs(file_name: str):
     # Set y-axis ticks at intervals of 1
     ax.set_yticks(np.arange(-max_y / 2, max_y / 2 + 1, 1))
 
-    plt.savefig(f"results/{file_name[:-2]}.png", dpi=800)
+    plt.savefig(f"results/{file_name[6:-2]}.png", dpi=800)
     plt.clf()
 
 
@@ -96,11 +96,4 @@ def generate_heatmap_abs(file_name: str):
 files = os.listdir("files")
 for file in files:
     print(file)
-import os
-
-files = os.listdir("files")
-for file in files:
-    if file.endswith(".db.csv"):
-        new_name = file.replace(".db.csv", ".csv")
-        os.rename(os.path.join("files", file), os.path.join("files", new_name))
-        print(f"Renamed: {file} to {new_name}")
+    generate_heatmap_abs(f"files/{file}")
