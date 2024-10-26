@@ -86,7 +86,14 @@ def generate_heatmap_abs(file_name: str):
 
     # Set y-axis ticks at intervals of 1
     ax.set_yticks(np.arange(-max_y / 2, max_y / 2 + 1, 1))
-
+    ax.text(
+        0.5,
+        1.08,
+        f"file: {file_name[6:-2]}",
+        horizontalalignment="center",
+        verticalalignment="center",
+        transform=ax.transAxes,
+    )
     plt.savefig(f"results/{file_name[6:-2]}.png", dpi=800)
     plt.clf()
 
