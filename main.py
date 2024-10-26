@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from dataclasses import dataclass
+import os
 
+print(os.listdir("files"))
 max_y = 8
 
 
@@ -85,7 +87,8 @@ def generate_heatmap_abs(file_name: str):
     # Set y-axis ticks at intervals of 1
     ax.set_yticks(np.arange(-max_y / 2, max_y / 2 + 1, 1))
 
-    plt.savefig("docs_images/stacked_heatmap_abs_centered.png", dpi=800)
+    plt.savefig(f"results/{file_name[:-2]}.png", dpi=800)
+    plt.clf()
 
 
-generate_heatmap_abs("demo/heatmapdata-bulk.csv")
+# generate_heatmap_abs("demo/heatmapdata-bulk.csv")
