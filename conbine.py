@@ -8,8 +8,8 @@ def resize_image(image, size):
     return image.resize(size, Image.LANCZOS)
 
 
-# 画像のサイズを指定（例: 幅300ピクセル、高さ300ピクセル）
-target_size = (300, 300)
+# 画像のサイズを指定（(14:9)）
+target_size = (700, 450)
 
 # PNG画像のリストを取得
 png_images = [f for f in os.listdir("results/") if f.endswith(".png")]
