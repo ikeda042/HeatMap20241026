@@ -89,12 +89,13 @@ def generate_heatmap_abs(file_name: str):
     ax.text(
         0.5,
         1.08,
-        f"file: {file_name[6:-2]}",
+        f"file: {file_name[6:-4]}",
         horizontalalignment="center",
         verticalalignment="center",
         transform=ax.transAxes,
+        fontsize=14,
     )
-    plt.savefig(f"results/{file_name[6:-4]}.png", dpi=800)
+    plt.savefig(f"results/{file_name[6:-4]}.png", dpi=400)
     plt.clf()
 
 
