@@ -19,7 +19,7 @@ print(png_images)
 images = [resize_image(Image.open(f"results/{f}"), target_size) for f in png_images]
 
 # 画像を結合
-n = 3
+n = 5
 rows = len(images) // n
 images = [np.hstack(images[i * n : (i + 1) * n]) for i in range(rows)]
 image = np.vstack(images)
